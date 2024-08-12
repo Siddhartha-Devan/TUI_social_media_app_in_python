@@ -1,0 +1,35 @@
+{
+    "Sidd": {
+        "password": "7890",
+        "details": [
+            "07/10/2003",
+            21,
+            "Salem",
+            "Engineer"
+        ],
+        "friends": [],
+        "requests": []
+    },
+    "Kavin": {
+        "password": "6789",
+        "details": [
+            "24/05/2004",
+            20,
+            "Ramnad",
+            "Developer"
+        ],
+        "friends": [],
+        "requests": []
+    },
+    "Pravin": {
+        "password": "1234",
+        "details": [
+            "21/12/2003",
+            20,
+            "Namakkal",
+            "Designer"
+        ],
+        "friends": [],
+        "requests": []
+    }
+}
