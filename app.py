@@ -26,9 +26,14 @@ class User:
         # list_of_users[self.name] = self
 
 
+    def suggest_friends(self):
+        all_users = list(user_data_base.keys())
+        
+
 sidd = User('Sidd', '7890', '07/10/2003', 21, 'Salem', 'Engineer')
 kavin = User('Kavin', '6789', '24/05/2004', 20, 'Ramnad', 'Developer')
 pravin = User('Pravin', '1234', '21/12/2003', 20, 'Namakkal', 'Designer')
+sidd.suggest_friends()
 
 print(sidd.password)
 print(user_data_base)
