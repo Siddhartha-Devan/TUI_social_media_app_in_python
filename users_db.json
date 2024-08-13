@@ -20,7 +20,10 @@
             "Ramnad",
             "Developer"
         ],
-        "friends": [],
+        "friends": [
+            "Gokul",
+            "Vettri"
+        ],
         "requests": []
     },
     "Pravin": {
@@ -64,7 +67,9 @@
             "Erode",
             "Student"
         ],
-        "friends": [],
+        "friends": [
+            "Sibi"
+        ],
         "requests": []
     },
     "Gokul": {

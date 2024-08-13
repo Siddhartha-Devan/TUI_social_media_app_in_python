@@ -11,7 +11,7 @@ print(type(user_data_base))
 
 
 class User:
-    
+
     def __init__(self, name,password, dob, age, location, occupation, new_user=True):
         self.name = name
         self.password = password
@@ -21,14 +21,19 @@ class User:
         self.occupation = occupation
         self.friends = []
         self.requests = []
-        
+
         if new_user:
-            user_data_base[self.name] = {'password': self.password, 'details' : [self.dob, self.age, self.location, self.occupation], 'friends' : self.friends,'requests' : self.requests}
+            self.updater()
+        # if new_user:
+        #     user_data_base[self.name] = {'password': self.password, 'details' : [self.dob, self.age, self.location, self.occupation], 'friends' : self.friends,'requests' : self.requests}
         # user_data_base[self.name] = [self.dob, self.age, self.location, self.occupation, self.friends, self.requests, self]
         # list_of_users[self.name] = self
 
+    def updater(self):
+        user_data_base[self.name] = {'password': self.password, 'details' : [self.dob, self.age, self.location, self.occupation], 'friends' : self.friends,'requests' : self.requests}
+        
 
-    def suggest_friends(self):
+    def show_mutual_friends(self):
         all_users = list(user_data_base.keys())
 
         existing_friends = self.friends
@@ -44,7 +49,9 @@ class User:
         for mf in mutual_friends:
             print(mf)        
 
-
+    def suggest_friends(self):
+        all_users = list(user_data_base.keys())
+        self.show_mutual_friends()
         print("Suggested for ", self.name, '...')
         matching_profiles = []
         for user in all_users:
@@ -82,10 +89,10 @@ class User:
         
     def add_friend(self, user):
         all_users = list(user_data_base.keys())
-        print(all_users)
+        # print(all_users)
         if user in all_users:
             print("existing f => ", self.friends)
-            user_data_base[self.name]['friends'].append(user)
+            self.friends.append(user)
             
             # user_data_base[self.name]['friends'].append(user)
             print(user, ' added to friends succesfully')
@@ -93,13 +100,45 @@ class User:
             for friend in self.friends:
                 print('-- -- ', friend,' -- --')
 
-            print(self.occupation)
-
+            self.updater()
+            
         else:
             print('No such user exists... review the code')
 
     
-    
+    def send_request(self, user):
+        all_users = list(user_data_base.keys())
+
+        if user in all_users and user not in self.friends:
+            if self.name not in user_data_base[user]['requests']:
+                user_data_base[user]['requests'].append(self.name)
+                print('request sent to ', user, ' from ', self.name)
+
+            elif self.name in user_data_base[user]['requests']:
+                print('pending request, wait for ', user, ' to accept your request')
+
+    def accept_request(self, user):
+        if user in self.requests:
+            self.requests.remove(user)
+            self.friends.append(user)
+            self.updater()
+            print('request from ', user, ' is accepted')
+            print('the pending requests are ', self.requests)
+            print('these are your friends -- ', self.friends)
+        else:
+            print('No pending request from ', user)
+
+    def reject_request(self, user):
+        if user in self.requests:
+            self.requests.remove(user)
+            self.updater()
+            print('request from ', user, 'is rejected')
+            print('the pending requests are ', self.requests)
+            print('these are your friends -- ', self.friends)
+        else:
+            print('No pending request from ', user)
+
+            
 
 
 
@@ -113,14 +152,19 @@ vettri = User('Vettri', '2222', '06/01/2003', 22, 'Erode', 'Student')
 gokul = User('Gokul', '1111', '04/02/2003', 21,'Salem', 'Student')
 
 sidd.add_friend('Kavin')
-# kavin.add_friend('Gokul')
-# kavin.add_friend('Vettri')
+kavin.add_friend('Gokul')
+kavin.add_friend('Vettri')
+vettri.add_friend()
 
-# sidd.suggest_friends()
+sibi.send_request('Vettri')
+sibi.send_request('Vettri')
+pravin.send_request('Vettri')
 
-sidd.suggest_friends()
+vettri.reject_request('Pravin')
+vettri.accept_request('Sibi')
 
-print(sidd.password)
+vettri.suggest_friends()
+# print(sidd.password)
 # print(user_data_base)
 
 
