@@ -138,8 +138,6 @@ class User:
         else:
             print('No pending request from ', user)
 
-            
-
 
 
 
@@ -169,7 +167,22 @@ vettri.suggest_friends()
 # print(user_data_base)
 
 
+
+
+actions_list = ["signup", "suggest_friends", "send_request","my_friends", "view_requests", "accept_request", "done"]
+def printer(actions_list):
+    print("The below are the allowed functions:")
+    for i in actions_list:
+        print(i)
+
+
+printer(actions_list)   
+print("enter done to exit")
+inp = input("Enter your action: ")
+
+
+
+
 with open(db_path, 'w') as file:
     json.dump(user_data_base, file, indent=4)
     file.close()
-
