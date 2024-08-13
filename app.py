@@ -28,12 +28,70 @@ class User:
 
     def suggest_friends(self):
         all_users = list(user_data_base.keys())
-        
+        print("Suggested for ", self.name, '...')
+        matching_profiles = []
+        for user in all_users:
+            if user != self.name:
+                matching_index = 0
 
+                # if user_data_base[user]['details'][0][3:5] == self.dob[3:5]:
+                #     matching_index+=1
+                # else:pass
+
+                if  user_data_base[user]['details'][1] == self.age:
+                    matching_index+=1
+                else: pass
+
+                if user_data_base[user]['details'][2].lower() == self.location.lower():
+                    matching_index+=1
+                else: pass
+
+                if user_data_base[user]['details'][3].lower() == self.occupation.lower():
+                    matching_index+=1
+                else: pass
+
+                matching_profiles.append([matching_index, user])
+
+
+        matching_profiles = sorted(matching_profiles)[::-1]
+
+        for i in matching_profiles:
+            if i[0] > 0:
+                print('-- -- ', i[1], ' -- --', i[0])
+        print("Some other users are:")
+        for i in matching_profiles:
+            if i[0] == 0:
+               print('-- -- ', i[1], ' -- --')      
+        
+    def add_friend(self, user):
+        all_users = list(user_data_base.keys())
+        if user in all_users:
+            self.friends.append(user)
+            # user_data_base[self.name]['friends'].append(user)
+            print(user, ' added to friends succesfully')
+            print('These are', self.name, "'s",' friends') 
+            for friend in self.friends:
+                print('-- -- ', friend,' -- --')
+
+        else:
+            print('No such user exists... review the code')
+
+    
+    
 sidd = User('Sidd', '7890', '07/10/2003', 21, 'Salem', 'Engineer')
 kavin = User('Kavin', '6789', '24/05/2004', 20, 'Ramnad', 'Developer')
 pravin = User('Pravin', '1234', '21/12/2003', 20, 'Namakkal', 'Designer')
+sibi = User('Sibi', '2003', '04/12/2002', 21, 'Salem', 'Engineer')
+vicky = User('Vicky', '4567', '25/05/2003', 21, 'Dharmapuri', 'Designer')
+vettri = User('Vettri', '2222', '06/01/2003', 22, 'Erode', 'Student')
+gokul = User('Gokul', '1111', '04/02/2003', 21,'Salem', 'Student')
+
+# sidd.add_friend('Kavin')
+kavin.add_friend('Gokul')
+kavin.add_friend('Vettri')
+
 sidd.suggest_friends()
+kavin.suggest_friends()
 
 print(sidd.password)
 print(user_data_base)

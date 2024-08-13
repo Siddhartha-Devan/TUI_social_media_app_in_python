@@ -7,7 +7,10 @@
             "Salem",
             "Engineer"
         ],
-        "friends": [],
+        "friends": [
+            "Gokul",
+            "Gokul"
+        ],
         "requests": []
     },
     "Kavin": {
@@ -18,7 +21,10 @@
             "Ramnad",
             "Developer"
         ],
-        "friends": [],
+        "friends": [
+            "Gokul",
+            "Gokul"
+        ],
         "requests": []
     },
     "Pravin": {
@@ -29,7 +35,66 @@
             "Namakkal",
             "Designer"
         ],
-        "friends": [],
+        "friends": [
+            "Gokul",
+            "Gokul"
+        ],
+        "requests": []
+    },
+    "Sibi": {
+        "password": "2003",
+        "details": [
+            "04/12/2002",
+            21,
+            "Salem",
+            "Engineer"
+        ],
+        "friends": [
+            "Gokul",
+            "Gokul"
+        ],
+        "requests": []
+    },
+    "Vicky": {
+        "password": "4567",
+        "details": [
+            "25/05/2003",
+            21,
+            "Dharmapuri",
+            "Designer"
+        ],
+        "friends": [
+            "Gokul",
+            "Gokul"
+        ],
+        "requests": []
+    },
+    "Gokul": {
+        "password": "1111",
+        "details": [
+            "04/02/2003",
+            21,
+            "Salem",
+            "Student"
+        ],
+        "friends": [
+            "Gokul",
+            "Gokul"
+        ],
+        "requests": []
+    },
+    "Vettri": {
+        "password": "2222",
+        "details": [
+            "06/01/2003",
+            22,
+            "Erode",
+            "Student"
+        ],
+        "friends": [
+            "Gokul",
+            "Gokul"
+        ],
         "requests": []
     }
 }
