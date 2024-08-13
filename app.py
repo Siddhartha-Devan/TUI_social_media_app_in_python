@@ -55,7 +55,7 @@ class User:
         print("Suggested for ", self.name, '...')
         matching_profiles = []
         for user in all_users:
-            if user != self.name:
+            if user != self.name and user not in self.friends:
                 matching_index = 0
 
                 # if user_data_base[user]['details'][0][3:5] == self.dob[3:5]:
@@ -154,7 +154,8 @@ gokul = User('Gokul', '1111', '04/02/2003', 21,'Salem', 'Student')
 sidd.add_friend('Kavin')
 kavin.add_friend('Gokul')
 kavin.add_friend('Vettri')
-vettri.add_friend()
+vettri.add_friend('Kavin')
+
 
 sibi.send_request('Vettri')
 sibi.send_request('Vettri')
