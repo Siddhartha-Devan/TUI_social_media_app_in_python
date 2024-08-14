@@ -8,6 +8,9 @@
             "Engineer"
         ],
         "friends": [
+            "Kavin",
+            "Gokul",
+            "Vettri",
             "Kavin"
         ],
         "requests": []
@@ -21,8 +24,10 @@
             "Developer"
         ],
         "friends": [
+            "Kavin",
             "Gokul",
-            "Vettri"
+            "Vettri",
+            "Kavin"
         ],
         "requests": []
     },
@@ -69,7 +74,9 @@
         ],
         "friends": [
             "Kavin",
-            "Sibi"
+            "Gokul",
+            "Vettri",
+            "Kavin"
         ],
         "requests": []
     },
@@ -80,6 +87,17 @@
             21,
             "Salem",
             "Student"
+        ],
+        "friends": [],
+        "requests": []
+    },
+    "Alice": {
+        "password": "1234",
+        "details": [
+            "12/12/2000",
+            "25",
+            "USA",
+            "unemployed"
         ],
         "friends": [],
         "requests": []

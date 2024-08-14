@@ -21,6 +21,7 @@ class UserDbManager:
                 return self.user_data_base[user_name]
             else:
                 print("Login Unsuccessful, Wrong password")
+    
         else:
             print("User name doesn't exist")
 

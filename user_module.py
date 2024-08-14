@@ -18,8 +18,16 @@ class User():
             self.requests = []
             self.updater()
 
-        if not new_user:
-            self.friends = friends_l
+        if new_user==False:
+            if friends_l == None:
+                self.friends = []
+            else:
+                self.friends = friends_l
+                
+            if requests_l == None:
+                self.requests = []
+            else:
+                self.requests =requests_l 
             self.requests = requests_l
         # if new_user:
         #     user_data_base[self.name] = {'password': self.password, 'details' : [self.dob, self.age, self.location, self.occupation], 'friends' : self.friends,'requests' : self.requests}
@@ -143,7 +151,7 @@ class User():
             print(n, friend)
             n+=1
 
-    def my_requests(self);
+    def my_requests(self):
         print("You have", len(self.requests), 'pending requests...')
         n=1
         for req in self.requests:
@@ -152,6 +160,7 @@ class User():
 
     def close_app(self):
         user_db_obj.close_db(db_path, user_data_base)
+
 
 
 
