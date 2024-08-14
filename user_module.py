@@ -1,4 +1,9 @@
-class User:
+from user_db_manager import UserDbManager
+db_path = r'C:\Users\Siddhartha Devan V\.spyder-py3\ZOHO\Social media app\users_db.json'
+user_db_obj = UserDbManager(db_path)
+user_data_base = user_db_obj.user_data_base
+
+class User():
     def __init__(self, name,password, dob, age, location, occupation, new_user=True):
         self.name = name
         self.password = password
@@ -125,3 +130,5 @@ class User:
         else:
             print('No pending request from ', user)
 
+    def close_app(self):
+        user_db_obj.close_db(db_path, user_data_base)

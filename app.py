@@ -1,16 +1,18 @@
 import json
 from user_module import User
 
+
 list_of_users = []
 
-db_path = r'C:\Users\Siddhartha Devan V\.spyder-py3\ZOHO\Social media app\users_db.json'
+# db_path = r'C:\Users\Siddhartha Devan V\.spyder-py3\ZOHO\Social media app\users_db.json'
 
-with open(db_path, 'r') as file:
-    user_data_base = json.load(file)
-    file.close()
-# user_data_base = {}
-print(type(user_data_base))
+# with open(db_path, 'r') as file:
+#     user_data_base = json.load(file)
+#     file.close()
+# # user_data_base = {}
+# print(type(user_data_base))
 
+# user_db = UserDbManager(db_path)
 
 
 
@@ -59,9 +61,21 @@ while inp != 'done':
         user_name = input("Enter your user_name:")
         password = input("Enter your password")
 
-        # if user_data_base 
+        if 
 
 
-with open(db_path, 'w') as file:
-    json.dump(user_data_base, file, indent=4)
-    file.close()
+
+
+
+
+
+
+
+
+
+
+
+
+# with open(db_path, 'w') as file:
+#     json.dump(user_data_base, file, indent=4)
+#     file.close()
