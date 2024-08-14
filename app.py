@@ -46,15 +46,25 @@ vettri.suggest_friends()
 
 actions_list = ["login", "signup", "suggest_friends", "send_request","my_friends", "view_requests",
                  "accept_request", "reject_request", "done"]
+
 def printer(actions_list):
     print("The below are the allowed functions:")
     for i in actions_list:
         print(i)
 
 
+current_user = None
+
 printer(actions_list)   
 print("enter done to exit")
 inp = input("Enter your action: ")
+
+def user_checker(current_user):
+    if current_user == None:
+        print("Login or signup first...")
+        return False
+    else:
+        return True
 
 while inp != 'done':
     if inp == 'login':
@@ -75,7 +85,28 @@ while inp != 'done':
         user_name, password = user_name_password.split(" ")
 
         new_user_details = input('Enter your details in the following order-> dd/mm/yyyy age location occupation: ' )
+        new_user_details = new_user_details.split(" ")
+
+        current_user = User(user_name, password, new_user_details[0], new_user_details[1], new_user_details[2], new_user_details[3])
+        print("New User Created... Welcome", user_name)
+
+
+    if inp == 'suggest_friends':
+        if user_checker(current_user):
+            current_user.suggest_friends()
+    
+    if inp == 'my_friends':
+        if user_checker(current_user):
+            current_user.my_friends()
         
+    if inp == 'view_requests':
+        if user_checker(current_user):
+            current_user.my_requests()
+
+    if inp == 'send_request':
+        if user_checker(current_user):
+            user = input("Enter the name of the user whom you want to send the request to: ")
+            current_user.send_request(user)
 
 
     printer(actions_list)

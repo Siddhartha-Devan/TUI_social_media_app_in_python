@@ -135,5 +135,25 @@ class User():
         else:
             print('No pending request from ', user)
 
+
+    def my_friends(self):
+        print("You have", len(self.friends), "friends...")
+        n=1
+        for friend in self.friends:
+            print(n, friend)
+            n+=1
+
+    def my_requests(self);
+        print("You have", len(self.requests), 'pending requests...')
+        n=1
+        for req in self.requests:
+            print(n, req)
+            n+=1
+
     def close_app(self):
         user_db_obj.close_db(db_path, user_data_base)
+
+
+
+
+
