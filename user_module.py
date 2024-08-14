@@ -4,18 +4,23 @@ user_db_obj = UserDbManager(db_path)
 user_data_base = user_db_obj.user_data_base
 
 class User():
-    def __init__(self, name,password, dob, age, location, occupation, new_user=True):
+    def __init__(self, name,password, dob, age, location, occupation, friends_l = None, requests_l = None, new_user=True):
         self.name = name
         self.password = password
         self.dob = dob
         self.age = age
         self.location = location
         self.occupation = occupation
-        self.friends = []
-        self.requests = []
+
 
         if new_user:
+            self.friends = []
+            self.requests = []
             self.updater()
+
+        if not new_user:
+            self.friends = friends_l
+            self.requests = requests_l
         # if new_user:
         #     user_data_base[self.name] = {'password': self.password, 'details' : [self.dob, self.age, self.location, self.occupation], 'friends' : self.friends,'requests' : self.requests}
         # user_data_base[self.name] = [self.dob, self.age, self.location, self.occupation, self.friends, self.requests, self]
