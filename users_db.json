@@ -8,12 +8,11 @@
             "Engineer"
         ],
         "friends": [
-            "Kavin",
-            "Gokul",
-            "Vettri",
             "Kavin"
         ],
-        "requests": []
+        "requests": [
+            "Thanos"
+        ]
     },
     "Kavin": {
         "password": "6789",
@@ -24,10 +23,8 @@
             "Developer"
         ],
         "friends": [
-            "Kavin",
             "Gokul",
-            "Vettri",
-            "Kavin"
+            "Vettri"
         ],
         "requests": []
     },
@@ -74,9 +71,7 @@
         ],
         "friends": [
             "Kavin",
-            "Gokul",
-            "Vettri",
-            "Kavin"
+            "Sibi"
         ],
         "requests": []
     },
@@ -98,6 +93,19 @@
             "25",
             "USA",
             "unemployed"
+        ],
+        "friends": [],
+        "requests": [
+            "Thanos"
+        ]
+    },
+    "Thanos": {
+        "password": "6666",
+        "details": [
+            "10/10/1000",
+            "1000",
+            "titan",
+            "destroyer"
         ],
         "friends": [],
         "requests": []

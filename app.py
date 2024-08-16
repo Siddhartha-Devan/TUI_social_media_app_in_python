@@ -16,28 +16,33 @@ list_of_users = []
 
 
 
-sidd = User('Sidd', '7890', '07/10/2003', 21, 'Salem', 'Engineer', new_user=False)
-kavin = User('Kavin', '6789', '24/05/2004', 20, 'Ramnad', 'Developer', new_user=False)
-pravin = User('Pravin', '1234', '21/12/2003', 20, 'Namakkal', 'Designer', new_user=False)
-sibi = User('Sibi', '2003', '04/12/2002', 21, 'Salem', 'Engineer', new_user=False)
-vicky = User('Vicky', '4567', '25/05/2003', 21, 'Dharmapuri', 'Designer', new_user=False)
-vettri = User('Vettri', '2222', '06/01/2003', 22, 'Erode', 'Student', new_user=False)
-gokul = User('Gokul', '1111', '04/02/2003', 21,'Salem', 'Student', new_user=False)
-
-sidd.add_friend('Kavin')
-kavin.add_friend('Gokul')
-kavin.add_friend('Vettri')
-vettri.add_friend('Kavin')
 
 
-sibi.send_request('Vettri')
-sibi.send_request('Vettri')
-pravin.send_request('Vettri')
+# Used for initial database setup...
 
-vettri.reject_request('Pravin')
-vettri.accept_request('Sibi')
 
-vettri.suggest_friends()
+# sidd = User('Sidd', '7890', '07/10/2003', 21, 'Salem', 'Engineer', new_user=False)
+# kavin = User('Kavin', '6789', '24/05/2004', 20, 'Ramnad', 'Developer', new_user=False)
+# pravin = User('Pravin', '1234', '21/12/2003', 20, 'Namakkal', 'Designer', new_user=False)
+# sibi = User('Sibi', '2003', '04/12/2002', 21, 'Salem', 'Engineer', new_user=False)
+# vicky = User('Vicky', '4567', '25/05/2003', 21, 'Dharmapuri', 'Designer', new_user=False)
+# vettri = User('Vettri', '2222', '06/01/2003', 22, 'Erode', 'Student', new_user=False)
+# gokul = User('Gokul', '1111', '04/02/2003', 21,'Salem', 'Student', new_user=False)
+
+# sidd.add_friend('Kavin')
+# kavin.add_friend('Gokul')
+# kavin.add_friend('Vettri')
+# vettri.add_friend('Kavin')
+
+
+# sibi.send_request('Vettri')
+# sibi.send_request('Vettri')
+# pravin.send_request('Vettri')
+
+# vettri.reject_request('Pravin')
+# vettri.accept_request('Sibi')
+
+# vettri.suggest_friends()
 # print(sidd.password)
 # print(user_data_base)
 

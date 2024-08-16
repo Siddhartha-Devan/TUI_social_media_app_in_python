@@ -2,7 +2,7 @@ from user_db_manager import UserDbManager
 db_path = r'C:\Users\Siddhartha Devan V\.spyder-py3\ZOHO\Social media app\users_db.json'
 user_db_obj = UserDbManager(db_path)
 user_data_base = user_db_obj.user_data_base
-
+print(user_data_base)
 class User():
     def __init__(self, name,password, dob, age, location, occupation, friends_l = None, requests_l = None, new_user=True):
         self.name = name
@@ -28,7 +28,8 @@ class User():
                 self.requests = []
             else:
                 self.requests =requests_l 
-            self.requests = requests_l
+            
+            print(self.name, self.friends, self.requests)
         # if new_user:
         #     user_data_base[self.name] = {'password': self.password, 'details' : [self.dob, self.age, self.location, self.occupation], 'friends' : self.friends,'requests' : self.requests}
         # user_data_base[self.name] = [self.dob, self.age, self.location, self.occupation, self.friends, self.requests, self]
@@ -115,6 +116,7 @@ class User():
         all_users = list(user_data_base.keys())
 
         if user in all_users and user not in self.friends:
+            print(user, user_data_base[user])
             if self.name not in user_data_base[user]['requests']:
                 user_data_base[user]['requests'].append(self.name)
                 print('request sent to ', user, ' from ', self.name)
