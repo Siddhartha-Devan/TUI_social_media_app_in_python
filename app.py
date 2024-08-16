@@ -113,6 +113,15 @@ while inp != 'done':
             user = input("Enter the name of the user whom you want to send the request to: ")
             current_user.send_request(user)
 
+    if inp == 'accept_request':
+        if user_checker(current_user):
+            user = input("Enter the name of the user whose request you wanna accept: ")
+            current_user.accept_request(user)
+
+    if inp == 'reject_request':
+        if user_checker(current_user):
+            user = input("Enter the name of the user whose request you wanna reject: ")
+            current_user.reject_request(user)
 
     printer(actions_list)
     inp = input("Enter your action: ")

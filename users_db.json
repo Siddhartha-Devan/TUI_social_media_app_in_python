@@ -8,11 +8,10 @@
             "Engineer"
         ],
         "friends": [
-            "Kavin"
-        ],
-        "requests": [
+            "Kavin",
             "Thanos"
-        ]
+        ],
+        "requests": []
     },
     "Kavin": {
         "password": "6789",
